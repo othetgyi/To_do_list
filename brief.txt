@@ -1,0 +1,7 @@
+What To Do List should do:
+-Provide a form so that you can enter your to-do items
+-When you type something in it appears under your to-do page
+-When you hover over the item, it changes color.
+-When you click on the checkbox, it changes color, draws a line through the text and then the text disappears
+-You can reorder things in order of importance
+-You can add dates.
