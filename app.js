@@ -5,5 +5,10 @@ function addTask() {
     document.getElementById("display").innerHTML = task;
 }
 
-document.getElementById("enter").addEventListener("click", addTask);
+function addTodo() {
+    var newTodo = task;
+    todos.push(newTodo);
+    return newTodo;
+}
+document.getElementById("add").addEventListener("click", addTask);
 
