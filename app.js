@@ -1,3 +1,11 @@
+var add = document.getElementById("add");
+
+var input = document.getElementById(user_input);
+
+var ul = document.querySelector("ul");
+
+var item = document.getElementsByTagName("li");
+
 //add task to array
 function addTask {
     var newLi = document.createElement("li"); 
