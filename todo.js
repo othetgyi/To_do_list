@@ -12,7 +12,7 @@ function printTodos() {
     for (var i = 0; i < todos.length; i++) {
         var li = document.createElement("li");
         var item = li.appendChild(document.createTextNode(todos[i]));
-        list.appendChild(list);
+        list.appendChild(item);
     }
 }
 button.addEventListener("click", function() {
