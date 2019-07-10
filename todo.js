@@ -8,6 +8,7 @@ function addTodo() {
 
 function printTodos() {
     var list = document.getElementById("tasks");
+    list.innerHTML = "";
 
     for (var i = 0; i < todos.length; i++) {
         var li = document.createElement("li");
