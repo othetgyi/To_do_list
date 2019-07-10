@@ -1,14 +1,13 @@
-
-function addTask() {
-    var task = document.getElementById("user_input").value;
-
-    document.getElementById("display").innerHTML = task;
+//add task to array
+function addTask {
+    var newLi = document.createElement("li"); 
+    li.appendChild(document.createTextNode(input.value));
+    ul.appendChild(li);
+    input.value = "";
+        
 }
 
-function addTodo() {
-    var newTodo = task;
-    todos.push(newTodo);
-    return newTodo;
-}
-document.getElementById("add").addEventListener("click", addTask);
+
+
+
 
