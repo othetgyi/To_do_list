@@ -1,5 +1,5 @@
 var add = document.getElementById("add");
-var input = document.getElementById("user_input");
+var input = document.getElementById("userInput");
 var ul = document.querySelector("ul");
 var item = document.getElementsByTagName("li");
 
