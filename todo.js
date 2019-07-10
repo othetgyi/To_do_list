@@ -6,6 +6,15 @@ function addTodo() {
     todos.push(input);
 }
 
+function printTodos() {
+    var list = document.getElementById("tasks");
+
+    for (var i = 0; i < todos.length; i++) {
+        var li = document.createElement("li");
+        var item = li.appendChild(document.createTextNode(todos[i]));
+        list.appendChild(list);
+    }
+}
 button.addEventListener("click", function() {
     addTodo();
     printTodos();
