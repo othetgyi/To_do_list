@@ -2,7 +2,7 @@ var todos = [];
 var button = document.querySelector("button");
 
 function addTodo() {
-    var  input = document.getElementById("userInput");
+    var  input = document.getElementById("userInput").value;
     todos.push(input);
 }
 
@@ -15,6 +15,7 @@ function printTodos() {
         list.appendChild(item);
     }
 }
+
 button.addEventListener("click", function() {
     addTodo();
     printTodos();
