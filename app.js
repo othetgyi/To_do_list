@@ -6,7 +6,7 @@ var item = document.getElementsByTagName("li");
 function inputLength(){
     return input.value.length;
 }
-//add task to array
+//create li and add text to li
 function addTask () {
     var li = document.createElement("li"); 
     li.appendChild(document.createTextNode(input.value));
