@@ -10,10 +10,9 @@ function newTask() {
     document.getElementById("input").value = "";
 }
 
-function validate() {
-    if (input.value == "") {
-        alert("Please add a task");
-        return false;
+document.body.onkeyup = function(e) {
+    if (e.keyCode == 13) {
+        newTask();
     }
 }
 
@@ -23,5 +22,5 @@ button.addEventListener("click", newTask);
 
 
 
-//addeventlistener when you click on button, runs a function
+
 
