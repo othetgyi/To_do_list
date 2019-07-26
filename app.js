@@ -20,9 +20,11 @@ function newTask() {
 }
 
 
-validate();
+
 
 button.addEventListener("click", newTask);
+
+validate();
 
 
 //addeventlistener when you click on button, runs a function
