@@ -13,14 +13,6 @@ function newTask() {
     document.getElementById("input").value = "";
 }
 
-function checkField(){
-    var inputValue = document.getElementsById("input").value;
-    if (inputValue === "") {
-        alert ("Please enter a task");
-        return false;
-    } 
-}
-
 button.addEventListener("click", newTask);
 
 
