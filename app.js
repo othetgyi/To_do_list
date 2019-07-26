@@ -10,10 +10,10 @@ function newTask() {
     document.getElementById("input").value = "";
 }
 
-document.body.onkeyup = function(e) {
-    if (e.keyCode == 13) {
-        newTask();
-    }
+function checkField(){
+    if (input.value == "") {
+        alert("Please enter a task");
+    } else newTask();
 }
 
 button.addEventListener("click", newTask);
