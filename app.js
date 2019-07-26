@@ -7,7 +7,7 @@ function newTask() {
     var li = document.createElement("li");
     li.appendChild(document.createTextNode(input.value));
     ul.appendChild(li);
-    input.value = "";
+    document.getElementById("input").value = "";
 }
 
 function validate() {
@@ -17,13 +17,8 @@ function validate() {
     }
 }
 
-
-
-
-
-validate();
-
 button.addEventListener("click", newTask);
+
 
 
 
