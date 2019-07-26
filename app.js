@@ -3,6 +3,13 @@ var ul = document.querySelector("ul");
 var input = document.getElementById("input");
 var item = document.getElementsByTagName("li");
 
+function newTask() {
+    var li = document.createElement("li");
+    li.appendChild(document.createTextNode(input.value));
+    ul.appendChild(li);
+    input.value = "";
+}
+
 function validate() {
     if (input == "") {
         alert("Please add a task");
@@ -11,13 +18,6 @@ function validate() {
 }
 
 
-
-function newTask() {
-    var li = document.createElement("li");
-    li.appendChild(document.createTextNode(input.value));
-    ul.appendChild(li);
-    input.value = "";
-}
 
 
 
