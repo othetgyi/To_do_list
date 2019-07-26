@@ -11,9 +11,10 @@ function newTask() {
 }
 
 function checkField(){
-    if (input.value == "") {
-        alert("Please enter a task");
-    } else newTask();
+    if (input == "") {
+        alert ("Please enter a task");
+        return false;
+    } 
 }
 
 button.addEventListener("click", newTask);
