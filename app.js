@@ -6,12 +6,19 @@ var item = document.getElementsByTagName("li");
 function newTask() {
     var li = document.createElement("li");
     li.appendChild(document.createTextNode(input.value));
-    ul.appendChild(li);
+    
+    if(input.value === ""){
+        alert("Please add a task");
+    } else {
+        document.getElementById("tasks").appendChild(li);
+    }
+    
     document.getElementById("input").value = "";
 }
 
 function checkField(){
-    if (input == "") {
+    var inputValue = document.getElementsById("input").value;
+    if (inputValue === "") {
         alert ("Please enter a task");
         return false;
     } 
