@@ -1,6 +1,4 @@
 var button = document.getElementById("enter");
-var ul = document.querySelector("ul");
-var input = document.getElementById("input");
 var item = document.getElementsByTagName("li");
 
 function newTask() {
@@ -12,7 +10,6 @@ function newTask() {
     } else {
         document.getElementById("tasks").appendChild(li);
     }
-    
     document.getElementById("input").value = "";
 }
 
