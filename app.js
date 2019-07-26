@@ -11,7 +11,7 @@ function newTask() {
 }
 
 function validate() {
-    if (input == "") {
+    if (input.value == "") {
         alert("Please add a task");
         return false;
     }
@@ -21,10 +21,11 @@ function validate() {
 
 
 
+validate();
 
 button.addEventListener("click", newTask);
 
-validate();
+
 
 
 //addeventlistener when you click on button, runs a function
