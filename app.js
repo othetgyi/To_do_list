@@ -1,3 +1,12 @@
+var myList = document.getElementsByTagName("li");
+var index;
+for(index = 0; index < myList.length; index++) {
+    var aSpanTag = document.createElement("SPAN");
+    var someTxt = document.createTextNode("\u00D7");
+    aSpanTag.className ="close";
+    aSpanTag.appenddChild(someTxt);
+    myList[index].appendChild(aSpanTag);
+}
 var button = document.getElementById("enter");
 var item = document.getElementsByTagName("li");
 // Close Button
@@ -33,6 +42,14 @@ for(i = 0; i < closeButton.length; i++){
 }
 
 }
+
+var ulList = document.querySelector("ul");
+ulList.addEventListener("click", function(){
+    console.log(event);
+    if(event.target.tagName === "LI"){
+        event.target.classList.toggle("checked");
+    }
+})
 
 button.addEventListener("click", newTask);
 
