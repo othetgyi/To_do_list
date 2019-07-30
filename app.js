@@ -1,3 +1,4 @@
+// Creating the Close buttons for lists that are not created with the main function
 var myList = document.getElementsByTagName("li");
 var index;
 for(index = 0; index < myList.length; index++) {
