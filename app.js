@@ -15,7 +15,7 @@ function newTask() {
     }
     
     document.getElementById("input").value = "";
-}
+
 
 //Create span tag
 var thePanTag = document.createElement("SPAN");
@@ -24,14 +24,15 @@ thePanTag.className = "close";
 thePanTag.appendChild(txt);
 li.appendChild(thePanTag);
 
-//Delete todos when click on span close button
+//Delete todos when you click on span close button
 for(i = 0; i < closeButton.length; i++){
-    closeBUtton[i].onclick = function(){
+    closeButton[i].onclick = function(){
         var theDiv = this.parentElement;
         theDiv.style.display = "none";
     }
 }
 
+}
 
 button.addEventListener("click", newTask);
 
