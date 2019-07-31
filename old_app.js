@@ -23,8 +23,8 @@ function newTask() {
     } else {
         document.getElementById("tasks").appendChild(li);
     }
+    
     document.getElementById("input").value = "";
-    li.onclick = removeItem;
 
 
 //Create span tag
@@ -33,13 +33,20 @@ var txt = document.createTextNode("\u00D7");
 thePanTag.className = "close";
 thePanTag.appendChild(txt);
 li.appendChild(thePanTag);
+
+//Delete todos when you click on span close button
+for(i = 0; i < closeButton.length; i++){
+    closeButton[i].onclick = function(){
+        var theDiv = this.parentElement;
+        theDiv.style.display = "none";
+    }
 }
 
-//Delete todos when you click on li
-
+}
 
 var ulList = document.querySelector("ul");
 ulList.addEventListener("click", function(){
+    console.log(event);
     if(event.target.tagName === "LI"){
         event.target.classList.toggle("checked");
     }
