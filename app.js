@@ -36,7 +36,9 @@ li.appendChild(thePanTag);
 }
 
 //Delete todos when you click on li
-
+function removeItem(e) {
+    event.target.parentElement.removeChild(event.target);
+}
 
 var ulList = document.querySelector("ul");
 ulList.addEventListener("click", function(){
