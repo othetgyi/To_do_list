@@ -14,12 +14,7 @@ var item = document.getElementsByTagName("li");
 var closeButton = document.getElementsByClassName("close");
 
 
-//Create span tag
-var thePanTag = document.createElement("SPAN");
-var txt = document.createTextNode("\u00D7");
-thePanTag.className = "close";
-thePanTag.appendChild(txt);
-li.appendChild(thePanTag);
+
 
 //Create a task
 function newTask() {
@@ -33,6 +28,14 @@ function newTask() {
     }
     document.getElementById("input").value = "";
     li.onclick = removeItem;
+
+//Create span tag
+var thePanTag = document.createElement("SPAN");
+var txt = document.createTextNode("\u00D7");
+thePanTag.className = "close";
+thePanTag.appendChild(txt);
+li.appendChild(thePanTag);
+
 }
 
 
