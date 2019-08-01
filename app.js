@@ -8,7 +8,6 @@ function newTodo() {
     var text = document.createTextNode(item);
     var ul = document.getElementById("list");
     
-    
     if (item == "") {
         alert("Please add a todo.");
     } else {
