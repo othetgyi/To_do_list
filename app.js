@@ -13,6 +13,16 @@ var item = document.getElementsByTagName("li");
 // Close Button
 var closeButton = document.getElementsByClassName("close");
 
+<<<<<<< Updated upstream
+=======
+
+//Show today's date
+const options = {weekday : "long", month:"short", day:"numeric"};
+const today = new Date();
+
+document.getElementById("date").innerHTML = today;
+
+>>>>>>> Stashed changes
 //Create a task
 function newTask() {
     var li = document.createElement("li");
