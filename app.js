@@ -14,7 +14,11 @@ var item = document.getElementsByTagName("li");
 var closeButton = document.getElementsByClassName("close");
 
 
+//Show today's date
+const options = {weekday : "long", month:"short", day:"numeric"};
+const today = new Date();
 
+dateElement.innerHTML = today.toLocaleDateString("en-US", options);
 
 //Create a task
 function newTask() {
