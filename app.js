@@ -4,19 +4,18 @@ var button = document.getElementById("button");
 //Adds a new todo
 function newTodo() {
     var item = document.getElementById("input").value;
+    var newItem = document.createElement("li");
     var text = document.createTextNode(item);
     var ul = document.getElementById("list");
-    var li = document.createElement("li");
+    
     
     if (item == "") {
         alert("Please add a todo.");
     } else {
-        li.appendChild(text);
-        ul.appendChild(li);
-        item = "";
-
-    } 
-
+        newItem.appendChild(text);
+        ul.appendChild(newItem);
+    } document.getElementById("input").value = "";
+}
 
 
 
@@ -37,7 +36,7 @@ function newTodo() {
    // const position = "beforeend";
 
     //list.insertAdjacentHTML(position, item);
-}
+
 
 //Calls function when button is clicked on
 button.addEventListener("click", newTodo);
