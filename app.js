@@ -5,10 +5,13 @@ var ul = document.getElementById("list");
 
 //Adds a new todo
 function newTodo(){
+    var li = document.createElement("li");
     if (input.value = "") {
         alert ("Please add a todo.")
     } else {
-        var li = document.createTextNode("li");
+        li.appendChild(document.createTextNode(input));
+        ul.appendChild(li);
+        input.value = "";
 
     }
 
@@ -22,14 +25,7 @@ function newTodo(){
 
 
     
-    li.appendChild(document.createTextNode(`<i class="far fa-circle" job="complete" id="0"></i>` +  input.value));
-
-    if (input.value == ""){
-        alert("Please add a task");
-    }   else {
-        document.getElementById("list").appendChild(li);
-    }
-    input.value = "";
+    
     
     //const item = `
     //    <i class="far fa-circle" job="complete" id="0"></i>${toDo}
