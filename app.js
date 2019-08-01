@@ -1,21 +1,27 @@
 //Select elements
-const clear = document.querySelector(".clear");
-const dateElement = document.getElementById("date");
-const list = document.getElementById("list");
-const input = document.getElementById("input");
+var button = document.getElementById("button");
+var input = document.getElementById("input");
+var ul = document.getElementById("list");
 
-//Class names
-const complete = "far fa-check-circle";
-const unComplete = "";
-const line_through = "lineThrough";
+//Adds a new todo
+function newTodo(){
+    if (input.value = "") {
+        alert ("Please add a todo.")
+    } else {
+        var li = document.createTextNode("li");
 
-const options = {weekday : "long", month:"short", day:"numeric"};
-const today = new Date();
+    }
 
-dateElement.innerHTML = today.toLocaleDateString("en-UK", options);
 
-function addTodo(toDo){
-    var li = document.createTextNode("li");
+
+
+
+
+
+
+
+
+    
     li.appendChild(document.createTextNode(`<i class="far fa-circle" job="complete" id="0"></i>` +  input.value));
 
     if (input.value == ""){
@@ -35,17 +41,8 @@ function addTodo(toDo){
     //list.insertAdjacentHTML(position, item);
 }
 
-//add a todo when the user hits the enter key
-document.addEventListener("keyup", function(event){
-    if (event.keyCode == 13){
-        const toDo = input.nodeValue;
-        //if the input isn't empty
-        if(toDo){
-            addTodo(toDo);
-        }
-    }
-});
-
+//Calls function when button is clicked on
+button.addEventListener("click", newTodo);
 
 
 
