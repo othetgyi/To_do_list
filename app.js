@@ -1,19 +1,21 @@
 //Select elements
 var button = document.getElementById("button");
-var input = document.getElementById("input");
-var ul = document.getElementById("list");
 
 //Adds a new todo
-function newTodo(){
+function newTodo() {
+    var item = document.getElementById("input").value;
+    var text = document.createTextNode(item);
+    var ul = document.getElementById("list");
     var li = document.createElement("li");
-    if (input.value = "") {
-        alert ("Please add a todo.")
+    
+    if (item == "") {
+        alert("Please add a todo.");
     } else {
-        li.appendChild(document.createTextNode(input));
+        li.appendChild(text);
         ul.appendChild(li);
-        input.value = "";
+        item = "";
 
-    }
+    } 
 
 
 
