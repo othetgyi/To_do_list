@@ -1,34 +1,18 @@
-// Creating the Close buttons for lists that are not created with the main function
-var myList = document.getElementsByTagName("li");
-var index;
+//Select elements
+const clear = document.querySelector(".clear");
+const dateElement = document.getElementById("date");
+const list = document.getElementById("list");
+const input = document.getElementById("input");
 
+//Class names
+const complete = "far fa-check-circle";
+const unComplete = "far fa-circle";
+const line_through = "lineThrough";
 
-
-
-//Show today's date
 const options = {weekday : "long", month:"short", day:"numeric"};
 const today = new Date();
 
-document.getElementById("date").innerHTML = today;
-
-
-//Create a task
-function newTask(toDo) {
-    const item = `<li class="item">
-        <i class="fa fa-circle-thin co" job="complete" id="0"></i>
-        <p class="text">Drink coffee</p>
-        <i class="fa fa-trash-o de" job="delete" id="0"></i>
-        </li>
-        `;
-    
-        const position = "beforeend";
-
-        list.insertAdjacentHTML(position, item);
-    }
-
-
-
-
+dateElement.innerHTML = today.toLocaleDateString("en-UK", options);
 
 
 
