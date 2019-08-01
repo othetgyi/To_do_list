@@ -13,8 +13,7 @@ var item = document.getElementsByTagName("li");
 // Close Button
 var closeButton = document.getElementsByClassName("close");
 
-<<<<<<< Updated upstream
-=======
+
 
 //Show today's date
 const options = {weekday : "long", month:"short", day:"numeric"};
@@ -22,9 +21,21 @@ const today = new Date();
 
 document.getElementById("date").innerHTML = today;
 
->>>>>>> Stashed changes
+
 //Create a task
-function newTask() {
+function newTask(toDo) {
+    const item = `<li class="item">
+        <i class="fa fa-circle-thin co" job="complete" id="0"></i>
+        <p class="text">${toDo}</p>
+        <i class="fa fa-trash-o de" job="delete" id="0"></i>
+        </li>
+        `;
+    
+        const position = "beforeend";
+
+        list.insertAdjacentHTML(position, item);
+    }
+
     var li = document.createElement("li");
     li.appendChild(document.createTextNode(input.value));
     
