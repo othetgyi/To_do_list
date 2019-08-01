@@ -13,13 +13,6 @@ var item = document.getElementsByTagName("li");
 // Close Button
 var closeButton = document.getElementsByClassName("close");
 
-
-//Show today's date
-const options = {weekday : "long", month:"short", day:"numeric"};
-const today = new Date();
-
-dateElement.innerHTML = today.toLocaleDateString("en-US", options);
-
 //Create a task
 function newTask() {
     var li = document.createElement("li");
@@ -30,8 +23,9 @@ function newTask() {
     } else {
         document.getElementById("tasks").appendChild(li);
     }
+    
     document.getElementById("input").value = "";
-    li.onclick = removeItem;
+
 
 //Create span tag
 var thePanTag = document.createElement("SPAN");
@@ -40,16 +34,23 @@ thePanTag.className = "close";
 thePanTag.appendChild(txt);
 li.appendChild(thePanTag);
 
+//Delete todos when you click on span close button
+for(i = 0; i < closeButton.length; i++){
+    closeButton[i].onclick = function(){
+        var theDiv = this.parentElement;
+        theDiv.style.display = "none";
+    }
 }
 
-
-
-//Delete todos when you click on li
-function removeItem(e) {
-    event.target.parentElement.removeChild(event.target);
 }
 
-
+var ulList = document.querySelector("ul");
+ulList.addEventListener("click", function(){
+    console.log(event);
+    if(event.target.tagName === "LI"){
+        event.target.classList.toggle("checked");
+    }
+})
 
 button.addEventListener("click", newTask);
 
