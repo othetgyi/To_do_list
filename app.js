@@ -12,7 +12,7 @@ function newTodo() {
     } else {
         ul.insertAdjacentHTML("beforeend", `
         <li>
-        <i class="far fa-circle" job="complete" id="0"></i>${item}
+        <i class="far fa-circle" job="complete" id="0"></i> ${item}
         </li>
         `);
     } document.getElementById("input").value = "";
