@@ -12,6 +12,7 @@ function newTodo() {
         document.getElementById("error").textContent = "Please enter a todo";
         field.className = "input-error";
     } else {
+        document.getElementById("error").textContent = "";        
         field.classList.remove("input-error");
         ul.insertAdjacentHTML("beforeend", `
         <li>

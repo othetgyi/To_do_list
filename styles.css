@@ -16,3 +16,7 @@ ul li.checked {
 .input-error {
     border: 2px solid red;
 }
+
+.input-ok {
+    border: 1px solid black;
+}
