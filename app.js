@@ -5,14 +5,12 @@ var button = document.getElementById("button");
 function newTodo() {
     var item = document.getElementById("input").value;
     var newItem = document.createElement("li");
-    var text = document.createTextNode(item);
     var ul = document.getElementById("list");
     
     if (item == "") {
         alert("Please add a todo.");
     } else {
-        newItem.appendChild(text);
-        ul.appendChild(newItem);
+        newItem.insertAdjacentHTML("beforeend", `<i class="far fa-circle" job="complete" id="0"></i>${item}`);
     } document.getElementById("input").value = "";
 }
 
