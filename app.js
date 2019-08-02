@@ -8,7 +8,7 @@ function newTodo() {
     var ul = document.getElementById("list");
     
     if (item == "") {
-        document.getElementById("error").textContent = "Please enter a todo.";
+        document.getElementById("error").textContent = "Please enter a todo";
     } else {
         ul.insertAdjacentHTML("beforeend", `
         <li>
