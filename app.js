@@ -6,9 +6,11 @@ function newTodo() {
     var item = document.getElementById("input").value;
     var newItem = document.createElement("li");
     var ul = document.getElementById("list");
+    var field = document.getElementById("input");
     
     if (item == "") {
         document.getElementById("error").textContent = "Please enter a todo";
+        field.className = "input-error";
     } else {
         ul.insertAdjacentHTML("beforeend", `
         <li>
