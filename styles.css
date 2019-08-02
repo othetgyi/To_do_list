@@ -3,3 +3,7 @@ ul li.checked {
     color: white;
     text-decoration: line-through;
 }
+
+#list li {
+    list-style-type: none;
+}
