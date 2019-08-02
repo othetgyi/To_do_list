@@ -10,7 +10,7 @@ function newTodo() {
     if (item == "") {
         alert("Please add a todo.");
     } else {
-        newItem.insertAdjacentHTML("beforeend", `${item}<i class="far fa-circle" job="complete" id="0"></i> `);
+        newItem.insertAdjacentHTML("beforeend", `${item}`);
     } document.getElementById("input").value = "";
 }
 
@@ -25,7 +25,7 @@ function newTodo() {
     
     
     
-    //const item = `
+    //const item = `<i class="far fa-circle" job="complete" id="0"></i>
     //    <i class="far fa-circle" job="complete" id="0"></i>${toDo}
     //    <i class="fas fa-trash" job="delete" id="0"></i>
         
