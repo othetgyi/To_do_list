@@ -12,3 +12,7 @@ ul li.checked {
     color: red;
     font-weight: bold;
 }
+
+#input-error {
+    border-color: red;
+}
