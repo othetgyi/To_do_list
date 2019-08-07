@@ -22,7 +22,11 @@ function newTodo() {
     } document.getElementById("input").value = "";
 }
 
+/* Remove todo */
 
+function removeTodo(){
+    element.parentNode.parentNod.removeChild(element.parentNode);
+}
 
 
 
