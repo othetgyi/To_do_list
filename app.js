@@ -20,14 +20,16 @@ function newTodo() {
         </li>
         `);
     } document.getElementById("input").value = "";
-    li.onclick = removeTodo;
 }
 
 /* Remove todo */
 
-function removeTodo(e){
-    e.target.parentElement.removeChild(e.target);
-}
+document.getElementById("list").addEventListener("click",function(e) {
+    if (e.target && e.target.matches("far fa-circle")){
+        console.log("This element has been clicked!");
+    }
+});
+
 
 
 
