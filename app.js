@@ -16,10 +16,12 @@ function newTodo() {
         field.classList.remove("input-error");
         ul.insertAdjacentHTML("beforeend", `
         <li>
-        <i class="far fa-circle" job="complete" id="0"></i> ${item}
+        <i class="far fa-circle" job="complete" id="0"></i> ${item} &#10060;
         </li>
         `);
     } document.getElementById("input").value = "";
+    
+
 }
 
 // Change todo to completed by clicking on it 
@@ -30,12 +32,7 @@ function newTodo() {
 //    }
 //});
 
-// Create delete button    
 
-var dBtn = document.createElement("button");
-dBtn.appendChild(document.createTextNode("X"));
-li.appendChild(dBtn);
-dBtn.addEventListener("click", deleteListItem);
 
 // Function to 
 	function deleteListItem(){
