@@ -22,15 +22,26 @@ function newTodo() {
     } document.getElementById("input").value = "";
 }
 
-/* Remove todo */
+// Change todo to completed by clicking on it 
 
-document.getElementById("list").addEventListener("click", function(e) {
-    if (e.target && e.target.nodeName == "LI") {
-        e.target.parentElement.removeChild(e.target);
+//document.getElementById("list").addEventListener("click", function(e) {
+//    if (e.target && e.target.nodeName == "LI") {
+        
+//    }
+//});
+
+// Create delete button    
+
+var dBtn = document.createElement("button");
+dBtn.appendChild(document.createTextNode("X"));
+li.appendChild(dBtn);
+dBtn.addEventListener("click", deleteListItem);
+
+// Function to 
+	function deleteListItem(){
+		e.target.parentElement.removeChild(e.target);
     }
-});
-
-
+    
 
 //Calls function when button is clicked on
 button.addEventListener("click", newTodo);
