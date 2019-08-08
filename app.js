@@ -23,6 +23,8 @@ function newTodo() {
     
 
 }
+//Changes styling of todo when circle is clicked
+
 
 // Delete todo by clicking on trash can symbol
 
@@ -33,14 +35,11 @@ document.getElementById("list").addEventListener("click", function(e) {
    if(elementJob == "complete"){
        console.log("Completed!");
    } else if(elementJob == "delete") {
-    e.target.parentElement.removeChild(e.target);
+    element.parentNode.parentNode.removeChild(element.parentNode); 
    }
 });
 
 
-
-//element.parentNode.parentNode.removeChild(element.parentNode); 
-// 
 
 //Calls function when button is clicked on
 button.addEventListener("click", newTodo);
