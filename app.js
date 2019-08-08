@@ -26,7 +26,7 @@ function newTodo() {
 
 document.getElementById("list").addEventListener("click", function(e) {
     if (e.target && e.target.nodeName == "LI") {
-        console.log("This element has been clicked!");
+        e.target.parentElement.removeChild(e.target);
     }
 });
 
