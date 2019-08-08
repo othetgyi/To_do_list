@@ -24,30 +24,12 @@ function newTodo() {
 
 /* Remove todo */
 
-document.getElementById("list").addEventListener("click",function(e) {
-    if (e.target && e.target.matches("far fa-circle")){
+document.getElementById("list").addEventListener("click", function(e) {
+    if (e.target && e.target.nodeName == "LI") {
         console.log("This element has been clicked!");
     }
 });
 
-
-
-
-
-
-
-
-    
-    
-    
-    //const item = `
-    //    <i class="far fa-circle" job="complete" id="0"></i>${toDo}
-    //    <i class="fas fa-trash" job="delete" id="0"></i>
-        
-    //`;
-   // const position = "beforeend";
-
-    //list.insertAdjacentHTML(position, item);
 
 
 //Calls function when button is clicked on
