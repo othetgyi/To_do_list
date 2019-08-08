@@ -27,12 +27,12 @@ function newTodo() {
 // Delete todo by clicking on X 
 
 document.getElementById("list").addEventListener("click", function(e) {
-    if (e.target && e.target.nodeName == "I") {
-        e.currentTarget.parentNode.remove();
+    if (e.target && e.target.matches == "i.fa-trash-alt") {
+        console.log("Deleted!");
     }
 });
 
-
+// e.target.parentElement.removeChild(e.target);
 
 //Calls function when button is clicked on
 button.addEventListener("click", newTodo);
