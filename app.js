@@ -16,7 +16,7 @@ function newTodo() {
         field.classList.remove("input-error");
         ul.insertAdjacentHTML("beforeend", `
         <li>
-        <i class="far fa-circle" job="complete" id="0"></i> ${item} <i class="far fa-trash-alt" class="trash"></i>
+        <i class="far fa-circle" job="complete" id="0" job="complete"></i> ${item} <i class="far fa-trash-alt" job="delete"></i>
         </li>
         `);
     } document.getElementById("input").value = "";
@@ -27,15 +27,20 @@ function newTodo() {
 // Delete todo by clicking on trash can symbol
 
 document.getElementById("list").addEventListener("click", function(e) {
-   if (e.target && e.target.nodeName == "I") {
-    console.log("Deleted!");
-}
+   const element = event.target;
+   const elementJob = element.attributes.job.value;
+
+   if(elementJob == "complete"){
+       console.log("Completed!");
+   } else if(elementJob == "delete") {
+    e.target.parentElement.removeChild(e.target);
+   }
 });
 
 
 
 //element.parentNode.parentNode.removeChild(element.parentNode); 
-// e.target.parentElement.removeChild(e.target);
+// 
 
 //Calls function when button is clicked on
 button.addEventListener("click", newTodo);
