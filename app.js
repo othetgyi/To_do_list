@@ -28,11 +28,10 @@ function newTodo() {
 
 document.getElementById("list").addEventListener("click", function(e) {
     if (e.target && e.target.nodeName == "I") {
-        console.log("This will be deleted!");
+        e.target.parentElement.removeChild(e.target);
     }
 });
 
-//e.target.parentElement.removeChild(e.target);
 
 //Calls function when button is clicked on
 button.addEventListener("click", newTodo);
