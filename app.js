@@ -20,12 +20,13 @@ function newTodo() {
         </li>
         `);
     } document.getElementById("input").value = "";
+    li.onclick = removeTodo;
 }
 
 /* Remove todo */
 
-function removeTodo(){
-    element.parentNode.parentNod.removeChild(element.parentNode);
+function removeTodo(e){
+    e.target.parentElement.removeChild(e.target);
 }
 
 
