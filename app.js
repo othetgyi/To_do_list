@@ -28,9 +28,10 @@ function newTodo() {
 
 document.getElementById("list").addEventListener("click", function(e) {
     if (e.target && e.target.nodeName == "I") {
-        e.target.parentElement.removeChild(e.target);
+        e.currentTarget.parentNode.remove();
     }
 });
+
 
 
 //Calls function when button is clicked on
