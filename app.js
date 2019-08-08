@@ -16,7 +16,7 @@ function newTodo() {
         field.classList.remove("input-error");
         ul.insertAdjacentHTML("beforeend", `
         <li>
-        <i class="far fa-circle" job="complete" id="0"></i> ${item} &#10060;
+        <i class="far fa-circle" job="complete" id="0"></i> ${item} <span id="delete">&#10006;</span>
         </li>
         `);
     } document.getElementById("input").value = "";
