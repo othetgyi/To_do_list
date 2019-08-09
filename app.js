@@ -4,7 +4,7 @@ var button = document.getElementById("button");
 // Class names
 const CHECK = "fa-check-circle";
 const UNCHECK = "fa-circle";
-const LINE-THROUGH = "lineThrough";
+const LINE_THROUGH = "lineThrough";
 
 //Adds a new todo
 function newTodo() {
@@ -21,7 +21,8 @@ function newTodo() {
         field.classList.remove("input-error");
         ul.insertAdjacentHTML("beforeend", `
         <li>
-        <i class="far fa-circle" job="complete" id="checked" job="complete"></i> ${item} <i class="far fa-trash-alt" job="delete"></i>
+        <i class="far fa-circle" job="complete" id="checked" job="complete"></i> <p class="text">${item}</p> 
+        <i class="far fa-trash-alt" job="delete"></i>
         </li>
         `);
     } document.getElementById("input").value = "";
