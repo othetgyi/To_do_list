@@ -1,6 +1,11 @@
 //Select elements
 var button = document.getElementById("button");
 
+// Class names
+const CHECK = "fa-check-circle";
+const UNCHECK = "fa-circle";
+const LINE-THROUGH = "lineThrough";
+
 //Adds a new todo
 function newTodo() {
     var item = document.getElementById("input").value;
@@ -16,24 +21,24 @@ function newTodo() {
         field.classList.remove("input-error");
         ul.insertAdjacentHTML("beforeend", `
         <li>
-        <i class="far fa-circle" job="complete" id="0" job="complete"></i> ${item} <i class="far fa-trash-alt" job="delete"></i>
+        <i class="far fa-circle" job="complete" id="checked" job="complete"></i> ${item} <i class="far fa-trash-alt" job="delete"></i>
         </li>
         `);
     } document.getElementById("input").value = "";
     
 
 }
-//Changes styling of todo when circle is clicked
-
 
 // Delete todo by clicking on trash can symbol
+//Changes styling of todo when circle is clicked
 
 document.getElementById("list").addEventListener("click", function(e) {
    const element = event.target;
    const elementJob = element.attributes.job.value;
 
    if(elementJob == "complete"){
-       console.log("Completed!");
+       var circle = document.getElementById("checked");
+       circle.classList.toggle("fas fa-check-circle"); 
    } else if(elementJob == "delete") {
     element.parentNode.parentNode.removeChild(element.parentNode); 
    }
