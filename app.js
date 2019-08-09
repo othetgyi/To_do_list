@@ -12,6 +12,8 @@ function newTodo() {
     var newItem = document.createElement("li");
     var ul = document.getElementById("list");
     var field = document.getElementById("input");
+    const DONE = done ? CHECK : UNCHECK;
+    const LINE = done ? LINE_THROUGH : "";
     
     if (item == "") {
         document.getElementById("error").textContent = "Please enter a todo";
@@ -21,8 +23,8 @@ function newTodo() {
         field.classList.remove("input-error");
         ul.insertAdjacentHTML("beforeend", `
         <li>
-        <i class="far fa-circle" job="complete" id="checked" job="complete"></i> <p class="text">${item}</p> 
-        <i class="far fa-trash-alt" job="delete"></i>
+        <i class="far ${DONE}" job="complete" id="${id}" job="complete"></i> <p class="text ${LINE}">${item}</p> 
+        <i class="far fa-trash-alt" job="delete" id="${id}"></i>
         </li>
         `);
     } document.getElementById("input").value = "";
@@ -36,6 +38,7 @@ function newTodo() {
 document.getElementById("list").addEventListener("click", function(e) {
    const element = event.target;
    const elementJob = element.attributes.job.value;
+   
 
    if(elementJob == "complete"){
        var circle = document.getElementById("checked");
