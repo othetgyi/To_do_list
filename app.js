@@ -32,25 +32,27 @@ function newTodo(item, id, done) {
     
 
 }
+//Complete to do
+function completeToDo(element) {
+    element.classList.toggle(CHECK);
+    element.classList.toggle(UNCHECK);
+    element.parentNode.querySelector(".text").classList.toggle(LINE_THROUGH);
+}
 
 // Delete todo by clicking on trash can symbol
-//Changes styling of todo when circle is clicked
+function removeTodo(element){
+    element.parentNode.parentNode.removeChild(element.parentNode); 
+}
 
+// Targets dynamically created items
 document.getElementById("list").addEventListener("click", function(e) {
    const element = event.target;
    const elementJob = element.attributes.job.value;
    
-   element.classList.toggle(CHECK);
-   element.classList.toggle(UNCHECK);
-   element.parentNode.querySelector(".text").classList.toggle(LINE_THROUGH);
-
-   
-
    if(elementJob == "complete"){
-       var circle = document.getElementById("checked");
-       circle.classList.toggle("fas fa-check-circle"); 
+       completeToDo(element);
    } else if(elementJob == "delete") {
-    element.parentNode.parentNode.removeChild(element.parentNode); 
+    removeTodo(element);
    }
 });
 
