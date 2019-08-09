@@ -7,11 +7,12 @@ const UNCHECK = "fa-circle";
 const LINE_THROUGH = "lineThrough";
 
 //Adds a new todo
-function newTodo() {
+function newTodo(item, id, done) {
     var item = document.getElementById("input").value;
     var newItem = document.createElement("li");
     var ul = document.getElementById("list");
     var field = document.getElementById("input");
+    
     const DONE = done ? CHECK : UNCHECK;
     const LINE = done ? LINE_THROUGH : "";
     
@@ -38,6 +39,11 @@ function newTodo() {
 document.getElementById("list").addEventListener("click", function(e) {
    const element = event.target;
    const elementJob = element.attributes.job.value;
+   
+   element.classList.toggle(CHECK);
+   element.classList.toggle(UNCHECK);
+   element.parentNode.querySelector(".text").classList.toggle(LINE_THROUGH);
+
    
 
    if(elementJob == "complete"){
