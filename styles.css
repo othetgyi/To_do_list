@@ -1,3 +1,8 @@
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+
 ul li.checked {
     background: #282828;
     color: white;
