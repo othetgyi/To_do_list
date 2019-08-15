@@ -9,7 +9,6 @@ body {
     position: relative;
     display: flex;
     align-items: center;
-    font-size: 1em;
 }
 ul li.checked {
     background: #282828;
