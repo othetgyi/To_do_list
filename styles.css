@@ -3,7 +3,9 @@ body {
     background-color: #ebf0fa;
 }
 
-
+.todo {
+    padding: 10px 20px;
+}
 ul li.checked {
     background: #282828;
     color: white;

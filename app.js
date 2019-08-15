@@ -23,7 +23,7 @@ function newTodo(item, id, done) {
         document.getElementById("error").textContent = "";        
         field.classList.remove("input-error");
         ul.insertAdjacentHTML("beforeend", `
-        <li>
+        <li class="todo">
         <i class="far ${DONE}" job="complete" id="${id}" job="complete"></i> <p class="text ${LINE}">${item}</p> 
         <i class="far fa-trash-alt" job="delete" id="${id}"></i>
         </li>
