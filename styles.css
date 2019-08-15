@@ -5,6 +5,7 @@ body {
 
 .todo {
     padding: 10px 20px;
+    height: 50px;
 }
 ul li.checked {
     background: #282828;
