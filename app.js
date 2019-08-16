@@ -38,8 +38,11 @@ function newTodo(item, id, done) {
 }
 //Complete to do
 function completeToDo(element) {
+    element.classList.toggle(FAR);
+    element.classList.toggle(FAS);
     element.classList.toggle(CHECK);
     element.classList.toggle(UNCHECK);
+    
     element.parentNode.querySelector(".text").classList.toggle(LINE_THROUGH);
 }
 
