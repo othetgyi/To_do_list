@@ -4,8 +4,8 @@ var button = document.getElementById("button");
 // Class names
 const CHECK = "fa-check-circle";
 const UNCHECK = "fa-circle";
-const FAS = "fas ";
-const FAR = "far ";
+/*const FAS = "fas ";
+const FAR = "far "; */
 const LINE_THROUGH = "lineThrough"; 
 
 //Adds a new todo
@@ -16,7 +16,7 @@ function newTodo(item, id, done) {
     var field = document.getElementById("input");
     
     const DONE = done ? CHECK : UNCHECK;
-    const PREFIX = done ? FAS : FAR;
+    const PREFIX = done ? FAS : FAR; 
     const LINE = done ? LINE_THROUGH : ""; 
     
     /*const tgt = event.target.firstElementChild;
@@ -30,12 +30,12 @@ function newTodo(item, id, done) {
         document.getElementById("error").textContent = "";        
         field.classList.remove("input-error");
         ul.insertAdjacentHTML("beforeend", `
-        <li class="todo">
-        <i class="${PREFIX}${DONE}" job="complete" id="${id}" job="complete"></i>&nbsp;&nbsp; <p class="text ${LINE}">${item}</p>&nbsp;&nbsp;
-        <i class="far fa-trash-alt" job="delete" id="${id}"></i>
-        </li>
+            <li class="todo">
+            <i class="${DONE}" job="complete" id="${id}"></i>&nbsp;&nbsp; <p class="text ${LINE}">${item}</p>&nbsp;&nbsp;
+            <i class="far fa-trash-alt" job="delete" id="${id}"></i>
+            </li>
         `);
-    } document.getElementById("input").value = "";
+        } document.getElementById("input").value = "";
     
 
 }
