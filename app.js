@@ -15,8 +15,8 @@ function newTodo(item, id, done) {
     var ul = document.getElementById("list");
     var field = document.getElementById("input");
     
-    const DONE = done ? CHECK : UNCHECK;
     const PREFIX = done ? FAS : FAR; 
+    const DONE = done ? CHECK : UNCHECK;
     const LINE = done ? LINE_THROUGH : ""; 
     
     
@@ -28,7 +28,7 @@ function newTodo(item, id, done) {
         field.classList.remove("input-error");
         ul.insertAdjacentHTML("beforeend", `
             <li class="todo">
-            <i class="${PREFIX}+${DONE}" job="complete" id="${id}"></i>&nbsp;&nbsp; <p class="text ${LINE}">${item}</p>&nbsp;&nbsp;
+            <i class="${PREFIX} ${DONE}" job="complete" id="${id}"></i>&nbsp;&nbsp; <p class="text ${LINE}">${item}</p>&nbsp;&nbsp;
             <i class="far fa-trash-alt" job="delete" id="${id}"></i>
             </li>
         `);
