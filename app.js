@@ -24,7 +24,7 @@ function newTodo(item, id, done) {
         field.classList.remove("input-error");
         ul.insertAdjacentHTML("beforeend", `
         <li class="todo">
-        <i class="far ${DONE}" job="complete" id="${id}" job="complete"></i>&nbsp;&nbsp; <p class="text ${LINE}">${item}</p>&nbsp;&nbsp;
+        <i class="fas ${DONE}" job="complete" id="${id}" job="complete"></i>&nbsp;&nbsp; <p class="text ${LINE}">${item}</p>&nbsp;&nbsp;
         <i class="far fa-trash-alt" job="delete" id="${id}"></i>
         </li>
         `);
