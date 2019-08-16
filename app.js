@@ -4,8 +4,8 @@ var button = document.getElementById("button");
 // Class names
 const CHECK = "fa-check-circle";
 const UNCHECK = "fa-circle";
-const FAS = "fas";
-const FAR = "far";
+const FAS = "fas ";
+const FAR = "far ";
 const LINE_THROUGH = "lineThrough"; 
 
 //Adds a new todo
@@ -31,7 +31,7 @@ function newTodo(item, id, done) {
         field.classList.remove("input-error");
         ul.insertAdjacentHTML("beforeend", `
         <li class="todo">
-        <i class="${PREFIX} ${DONE}" job="complete" id="${id}" job="complete"></i>&nbsp;&nbsp; <p class="text ${LINE}">${item}</p>&nbsp;&nbsp;
+        <i class="${PREFIX}${DONE}" job="complete" id="${id}" job="complete"></i>&nbsp;&nbsp; <p class="text ${LINE}">${item}</p>&nbsp;&nbsp;
         <i class="far fa-trash-alt" job="delete" id="${id}"></i>
         </li>
         `);
