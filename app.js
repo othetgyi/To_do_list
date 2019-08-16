@@ -4,8 +4,8 @@ var button = document.getElementById("button");
 // Class names
 const CHECK = "fa-check-circle";
 const UNCHECK = "fa-circle";
-/*const FAS = "fas ";
-const FAR = "far "; */
+const FAS = "fas";
+const FAR = "far";
 const LINE_THROUGH = "lineThrough"; 
 
 //Adds a new todo
@@ -19,9 +19,6 @@ function newTodo(item, id, done) {
     const PREFIX = done ? FAS : FAR; 
     const LINE = done ? LINE_THROUGH : ""; 
     
-    /*const tgt = event.target.firstElementChild;
-    tgt.classList.toggle('far');
-    tgt.classList.toggle('fas'); */
     
     if (item == "") {
         document.getElementById("error").textContent = "Please enter a todo";
@@ -31,7 +28,7 @@ function newTodo(item, id, done) {
         field.classList.remove("input-error");
         ul.insertAdjacentHTML("beforeend", `
             <li class="todo">
-            <i class="${DONE}" job="complete" id="${id}"></i>&nbsp;&nbsp; <p class="text ${LINE}">${item}</p>&nbsp;&nbsp;
+            <i class="${PREFIX} ${DONE}" job="complete" id="${id}"></i>&nbsp;&nbsp; <p class="text ${LINE}">${item}</p>&nbsp;&nbsp;
             <i class="far fa-trash-alt" job="delete" id="${id}"></i>
             </li>
         `);
