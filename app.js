@@ -63,6 +63,8 @@ function completeToDo(element) {
 // Delete todo by clicking on trash can symbol
 function removeTodo(element){
     element.parentNode.parentNode.removeChild(element.parentNode); 
+
+    LIST[element.id].trash = true;
 }
 
 // Targets dynamically created items
