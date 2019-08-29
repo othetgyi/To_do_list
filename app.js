@@ -8,6 +8,9 @@ const FAS = "fas";
 const FAR = "far";
 const LINE_THROUGH = "lineThrough"; 
 
+let LIST = []
+    , id = 0;
+
 //Adds a new todo
 function newTodo(item, id, done) {
     var item = document.getElementById("input").value;
@@ -32,10 +35,19 @@ function newTodo(item, id, done) {
             <i class="far fa-trash-alt" job="delete" id="${id}"></i>
             </li>
         `);
-        } document.getElementById("input").value = "";
-    
 
-}
+        LIST.push({
+            name : item,
+            id : id,
+            done : false,
+            trash : false
+        });
+        id++;
+        } document.getElementById("input").value = "";
+    }
+
+// add an item to the list
+
 //Complete to do
 function completeToDo(element) {
     element.classList.toggle(FAR);
