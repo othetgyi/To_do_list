@@ -12,8 +12,7 @@ const LINE_THROUGH = "lineThrough";
 let LIST = []
     , id = 0;
 
-// add item to localstorage (this code must be added where the LIST array is updated)
-localStorage.setItem("TODO", JSON.stringify(LIST));
+
 
 // get item from localstorage
 
@@ -52,7 +51,12 @@ function newTodo(item, id, done, trash) {
             done : false,
             trash : false
         });
+        
+        // add item to localstorage (this code must be added where the LIST array is updated)
+        localStorage.setItem("TODO", JSON.stringify(LIST));
+
         id++;
+        
         } document.getElementById("input").value = "";
     }
 
