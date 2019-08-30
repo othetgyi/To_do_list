@@ -56,7 +56,7 @@ function newTodo(item, id, done, trash) {
         localStorage.setItem("TODO", JSON.stringify(LIST));
 
         id++;
-        
+
         } document.getElementById("input").value = "";
     }
 
@@ -94,7 +94,8 @@ document.getElementById("list").addEventListener("click", function(e) {
    }
 });
 
-
+// add item to localstorage (this code must be added where the LIST array is updated)
+localStorage.setItem("TODO", JSON.stringify(LIST));
 
 //Calls function when button is clicked on
 button.addEventListener("click", newTodo);
