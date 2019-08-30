@@ -12,12 +12,13 @@ let LIST = []
     , id = 0;
 
 //Adds a new todo
-function newTodo(item, id, done) {
+function newTodo(item, id, done, trash) {
     var item = document.getElementById("input").value;
     var newItem = document.createElement("li");
     var ul = document.getElementById("list");
     var field = document.getElementById("input");
     
+    if(trash){ return;}
     const PREFIX = done ? FAS : FAR; 
     const DONE = done ? CHECK : UNCHECK;
     const LINE = done ? LINE_THROUGH : ""; 
@@ -65,6 +66,7 @@ function removeTodo(element){
     element.parentNode.parentNode.removeChild(element.parentNode); 
 
     LIST[element.id].trash = true;
+
 }
 
 // Targets dynamically created items
