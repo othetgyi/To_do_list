@@ -29,7 +29,12 @@ if(data){
     id = 0;
 }
 
-//load items
+//load items to the user's interface
+    function loadList(array){
+        array.forEach(function(item){
+            newTodo(item.name, item.id, item.done, item.trash);
+        });
+    }
 
 //Adds a new todo
 function newTodo(item, id, done, trash) {
