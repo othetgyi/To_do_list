@@ -17,7 +17,19 @@ let LIST = []
 // get item from localstorage
 let data = localStorage.getItem("TODO");
 
+// check if data is not empty
+if(data){
+    LIST = JSON.parse(data);
+    id = LIST.length; // set the id to the last one in the list
+    loadList(LIST); // load the list to the user interface
 
+}else{
+    //if data isn't empty
+    LIST = [];
+    id = 0;
+}
+
+//load items
 
 //Adds a new todo
 function newTodo(item, id, done, trash) {
