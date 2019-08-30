@@ -15,6 +15,7 @@ let LIST = []
 
 
 // get item from localstorage
+let data = localStorage.getItem("TODO");
 
 
 
