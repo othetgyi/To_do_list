@@ -8,6 +8,7 @@ const FAS = "fas";
 const FAR = "far";
 const LINE_THROUGH = "lineThrough"; 
 
+// Variables
 let LIST = []
     , id = 0;
 
@@ -19,13 +20,14 @@ function newTodo(item, id, done, trash) {
     var field = document.getElementById("input");
     
     if(trash){ return;}
+
     const PREFIX = done ? FAS : FAR; 
     const DONE = done ? CHECK : UNCHECK;
     const LINE = done ? LINE_THROUGH : ""; 
     
     
     if (item == "") {
-        document.getElementById("error").textContent = "Please enter a todo";
+        document.getElementById("error").textContent = "Please enter a task";
         field.className = "input-error";
     } else {
         document.getElementById("error").textContent = "";        
