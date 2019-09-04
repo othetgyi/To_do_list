@@ -39,6 +39,7 @@ if(data){
 //helper function to add an html li element to the list
 
 function populateItem (item, id, done, trash){
+    var ul = document.getElementById("list");
     if(trash){ return;}
 
     const PREFIX = done ? FAS : FAR; 
@@ -83,7 +84,7 @@ function newTodo(item, id, done, trash) {
         });
         
         // add item to localstorage (this code must be added where the LIST array is updated)
-        localStorage.setItem("TODO", JSON.stringify(LIST));
+       // localStorage.setItem("TODO", JSON.stringify(LIST));
 
         id++;
 
@@ -125,15 +126,15 @@ document.getElementById("list").addEventListener("click", function(e) {
 });
 
 // add item to localstorage (this code must be added where the LIST array is updated)
-localStorage.setItem("TODO", JSON.stringify(LIST));
+//localStorage.setItem("TODO", JSON.stringify(LIST));
 
 // Clear local storage
-const clear = document.querySelector(".clear");
+//const clear = document.querySelector(".clear");
 
-clear.addEventListener('click', function(){
-    localStorage.clear();
-    location.reload();
-});
+//clear.addEventListener('click', function(){
+//    localStorage.clear();
+//    location.reload();
+//});
 
 //Calls function when button is clicked on
 button.addEventListener("click", newTodo);
