@@ -16,7 +16,7 @@ let LIST = []
 
 // get item from localstorage
 let data = localStorage.getItem("TODO");
-
+console.log(data);
 // check if data is not empty
 if(data){
     LIST = JSON.parse(data);
@@ -35,6 +35,23 @@ if(data){
             newTodo(item.name, item.id, item.done, item.trash);
         });
     }
+
+//helper function to add an html li element to the list
+
+function populateItem (item, id, done, trash){
+    if(trash){ return;}
+
+    const PREFIX = done ? FAS : FAR; 
+    const DONE = done ? CHECK : UNCHECK;
+    const LINE = done ? LINE_THROUGH : ""; 
+    
+    listToAddTo.insertAdjacentHTML("beforeend", `
+    <li class="todo">
+    <i class="${PREFIX} ${DONE}" job="complete" id="${id}"></i>&nbsp;&nbsp; <p class="text ${LINE}">${item}</p>&nbsp;&nbsp;
+    <i class="far fa-trash-alt" job="delete" id="${id}"></i>
+    </li>
+`);
+}
 
 //Adds a new todo
 function newTodo(item, id, done, trash) {
@@ -56,12 +73,7 @@ function newTodo(item, id, done, trash) {
     } else {
         document.getElementById("error").textContent = "";        
         field.classList.remove("input-error");
-        ul.insertAdjacentHTML("beforeend", `
-            <li class="todo">
-            <i class="${PREFIX} ${DONE}" job="complete" id="${id}"></i>&nbsp;&nbsp; <p class="text ${LINE}">${item}</p>&nbsp;&nbsp;
-            <i class="far fa-trash-alt" job="delete" id="${id}"></i>
-            </li>
-        `);
+        populateItem(ul);
 
         LIST.push({
             name : item,

@@ -3,19 +3,19 @@ body {
     color: white;
     height: 100%;
     margin: 0;
-}
-
-.bg {
-    background-image: url("jessica-lewis-fJXv46LT7Xk-unsplash.jpg")
+    background-image: url("jessica-lewis-fJXv46LT7Xk-unsplash.jpg");
     position: fixed;
     height: 100%;
+    width: 100%;
     top: 0;
     left: 0;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; 
 
 }
+
+
 
 .todo {
     
