@@ -9,8 +9,7 @@ const FAR = "far";
 const LINE_THROUGH = "lineThrough"; 
 
 // Variables
-let LIST = []
-    , id = 0;
+let LIST = [], id = 0;
 
 
 
@@ -30,9 +29,9 @@ if(data){
 }
 
 //load items to the user's interface
-    function loadList(array){
+   function loadList(array){
         array.forEach(function(item){
-            newTodo(item.name, item.id, item.done, item.trash);
+            populateItem(item.name, item.id, item.done, item.trash);
         });
     }
 
@@ -46,7 +45,7 @@ function populateItem (item, id, done, trash){
     const DONE = done ? CHECK : UNCHECK;
     const LINE = done ? LINE_THROUGH : ""; 
     
-    listToAddTo.insertAdjacentHTML("beforeend", `
+    ul.insertAdjacentHTML("beforeend", `
     <li class="todo">
     <i class="${PREFIX} ${DONE}" job="complete" id="${id}"></i>&nbsp;&nbsp; <p class="text ${LINE}">${item}</p>&nbsp;&nbsp;
     <i class="far fa-trash-alt" job="delete" id="${id}"></i>
@@ -54,19 +53,12 @@ function populateItem (item, id, done, trash){
 `);
 }
 
-//Adds a new todo
-function newTodo(item, id, done, trash) {
+//Adds a new todo, b
+function newTodo() {
     var item = document.getElementById("input").value;
     var newItem = document.createElement("li");
     var ul = document.getElementById("list");
     var field = document.getElementById("input");
-    
-    if(trash){ return;}
-
-    const PREFIX = done ? FAS : FAR; 
-    const DONE = done ? CHECK : UNCHECK;
-    const LINE = done ? LINE_THROUGH : ""; 
-    
     
     if (item == "") {
         document.getElementById("error").textContent = "Please enter a task";
@@ -74,7 +66,7 @@ function newTodo(item, id, done, trash) {
     } else {
         document.getElementById("error").textContent = "";        
         field.classList.remove("input-error");
-        populateItem(ul);
+        populateItem(item, id, false, false );
 
         LIST.push({
             name : item,
@@ -84,14 +76,13 @@ function newTodo(item, id, done, trash) {
         });
         
         // add item to localstorage (this code must be added where the LIST array is updated)
-       // localStorage.setItem("TODO", JSON.stringify(LIST));
+        localStorage.setItem("TODO", JSON.stringify(LIST));
 
         id++;
 
-        } document.getElementById("input").value = "";
+        }
+        field.value = "";
     }
-
-// add an item to the list
 
 //Complete to do
 function completeToDo(element) {
@@ -126,7 +117,7 @@ document.getElementById("list").addEventListener("click", function(e) {
 });
 
 // add item to localstorage (this code must be added where the LIST array is updated)
-//localStorage.setItem("TODO", JSON.stringify(LIST));
+localStorage.setItem("TODO", JSON.stringify(LIST));
 
 // Clear local storage
 //const clear = document.querySelector(".clear");
