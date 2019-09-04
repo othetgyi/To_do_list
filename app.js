@@ -115,6 +115,14 @@ document.getElementById("list").addEventListener("click", function(e) {
 // add item to localstorage (this code must be added where the LIST array is updated)
 localStorage.setItem("TODO", JSON.stringify(LIST));
 
+// Clear local storage
+const clear = document.querySelector(".clear");
+
+clear.addEventListener('click', function(){
+    localStorage.clear();
+    location.reload();
+});
+
 //Calls function when button is clicked on
 button.addEventListener("click", newTodo);
 
