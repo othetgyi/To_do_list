@@ -13,7 +13,7 @@ html {
 body {
     height: 100%;
     margin: 0;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: white;
     
     }
@@ -46,6 +46,10 @@ ul li.checked {
     background: #282828;
     color: white;
     text-decoration: line-through;
+}
+
+#button {
+
 }
 
 #list li {
