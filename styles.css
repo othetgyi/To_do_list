@@ -49,9 +49,18 @@ ul li.checked {
 }
 
 #button {
+    background-color: transparent;
+    border-color: white;
+    color: white;
+    padding: 3px;
 
 }
 
+#input {
+    border: none;
+    border-bottom: 2px solid white;
+    background: transparent;
+}
 #list li {
     list-style-type: none;
 }
