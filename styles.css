@@ -1,14 +1,10 @@
 
 html {
     margin: 0;
-    background-image: url("jessica-lewis-fJXv46LT7Xk-unsplash.jpg");
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url("jessica-lewis-fJXv46LT7Xk-unsplash.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -mox-background-size: cover;
+    -o-background-size: cover;
     background-size: cover; 
 }
 
