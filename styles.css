@@ -14,7 +14,12 @@ body {
     color: white;
     }
 
-
+.box {
+    flex: 1 0 calc(25%-10px);
+    margin: 5px;
+    background: #AC71D0;
+    opacity: 0.5;
+}
 
 .todo {
     
