@@ -6,12 +6,15 @@ html {
     -mox-background-size: cover;
     -o-background-size: cover;
     background-size: cover; 
+    background: rgba(0,0,0,0.5);
+
 }
 
 
 body {
     font-family: 'Raleway', sans-serif;
     color: white;
+    margin: 0;
     }
 
 h1, h2 {
@@ -21,10 +24,11 @@ h1, h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(0,0,0,0.5);
-    width: 30%;
+    
+   
     
 }
+*/
 
 .todo {
     
