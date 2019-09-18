@@ -7,6 +7,9 @@ const UNCHECK = "fa-circle";
 const FAS = "fas";
 const FAR = "far";
 const LINE_THROUGH = "lineThrough"; 
+const CLEARBUTTON = document.getElementById("clear");
+CLEARBUTTON.addEventListener("click", clearTodo);
+
 
 // Variables
 let LIST = [], id = 0;
@@ -31,13 +34,13 @@ if(data){
 //load items to the user's interface
    function loadList(array){
         array.forEach(function(item){
-            populateItem(item.name, item.id, item.done, item.trash);
+            populateItem(item.name, item.id, item.done, item.trash, item.date);
         });
     }
 
 //helper function to add an html li element to the list
 
-function populateItem (item, id, done, trash){
+function populateItem (item, id, done, trash, date){
     var ul = document.getElementById("list");
     if(trash){ return;}
 
@@ -47,7 +50,7 @@ function populateItem (item, id, done, trash){
     
     ul.insertAdjacentHTML("beforeend", `
     <li class="todo">
-    <i class="${PREFIX} ${DONE}" job="complete" id="${id}"></i>&nbsp;&nbsp; <p class="text ${LINE}">${item}</p>&nbsp;&nbsp;
+    <i class="${PREFIX} ${DONE}" job="complete" id="${id}"></i>&nbsp;&nbsp; <p class="text ${LINE}">${item}&nbsp;${date}</p>&nbsp;&nbsp;
     <i class="far fa-trash-alt" job="delete" id="${id}"></i>
     </li>
 `);
@@ -59,17 +62,24 @@ function newTodo() {
     var newItem = document.createElement("li");
     var ul = document.getElementById("list");
     var field = document.getElementById("input");
+    var date = document.getElementById("date").value;
+    var dateField = document.getElementById("date")
     
     if (item == "") {
         document.getElementById("error").textContent = "Please enter a task";
         field.className = "input-error";
-    } else {
+    } else if (date == "") {
+        document.getElementById("error").textContent = "Please enter a date";
+        dateField.className = "input-error";
+    }
+     else {
         document.getElementById("error").textContent = "";        
         field.classList.remove("input-error");
-        populateItem(item, id, false, false );
+        populateItem(item, id, false, false, date);
 
         LIST.push({
             name : item,
+            date: date,
             id : id,
             done : false,
             trash : false
@@ -83,6 +93,14 @@ function newTodo() {
         }
         field.value = "";
     }
+
+//clear todo
+
+function clearTodo() {
+    let list = document.getElementById("list")
+    list.innerHTML = ''
+    localStorage.clear();
+}
 
 //Complete to do
 function completeToDo(element) {
