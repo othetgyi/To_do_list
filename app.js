@@ -89,7 +89,8 @@ function newTodo() {
         });
         
         
-        
+        //sets calendar default date to today's date
+        document.querySelector("#date").valueAsDate = new Date();
        
 
         // add item to localstorage (this code must be added where the LIST array is updated)
