@@ -88,7 +88,7 @@ input:-webkit-autofill:active {
 @keyframes autofill {
     100% {
         background: transparent;
-        color: inherit;
+        color: inherit; 
     }
 }
 
@@ -99,6 +99,33 @@ input:-webkit-autofill:active {
     }
 }
 
+::-webkit-datetime-edit-month-field { background: none; }
+::-webkit-datetime-edit-day-field { background: none; }
+::-webkit-datetime-edit-year-field { background: none; }
+
+::-webkit-inner-spin-button {
+  display: none;
+}
+::-webkit-clear-button {
+  display: none;
+  -webkit-appearance: none;
+}
+
+::-webkit-calendar-picker-indicator {
+    background: transparent;
+}
+/*::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  height: 14px;
+  width: 80px;
+  
+ 
+  z-index: 2;
+  position: absolute;
+  left: 9px;
+  top: 8px;
+}
+*/
 #list li {
     list-style-type: none;
 }
