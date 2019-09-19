@@ -66,14 +66,14 @@ function newTodo() {
     var dateField = document.getElementById("date")
     
     if (item == "") {
-        document.getElementById("error").textContent = "Please enter a task";
+        document.getElementById("textError").textContent = "Please enter a task";
         field.className = "input-error";
     } else if (date == "") {
         document.getElementById("error").textContent = "Please enter a date";
         dateField.className = "input-error";
     }
      else {
-        document.getElementById("error").textContent = "";        
+        document.getElementById("dateError").textContent = "";        
         field.classList.remove("input-error");
         populateItem(item, id, false, false, date);
 
