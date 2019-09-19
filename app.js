@@ -67,14 +67,16 @@ function newTodo() {
     
     if (item == "") {
         document.getElementById("textError").textContent = "Please enter a task";
-        field.className = "input-error";
-    } else if (date == "") {
-        document.getElementById("error").textContent = "Please enter a date";
-        dateField.className = "input-error";
+        field.className = "error";
+        
     }
-     else {
+    else if (date == "") {
+        document.getElementById("dateError").textContent = "Please enter a due date";
+        dateField.className = "error";
+
+    } else { 
         document.getElementById("dateError").textContent = "";        
-        field.classList.remove("input-error");
+        field.classList.remove("taskError");
         populateItem(item, id, false, false, date);
 
         LIST.push({
@@ -85,6 +87,10 @@ function newTodo() {
             trash : false
         });
         
+        
+        
+       
+
         // add item to localstorage (this code must be added where the LIST array is updated)
         localStorage.setItem("TODO", JSON.stringify(LIST));
 

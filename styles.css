@@ -70,7 +70,7 @@ ul li.checked {
     list-style-type: none;
 }
 
-#error {
+#textError, #dateError {
     color: red;
     font-weight: bold;
 }
@@ -79,9 +79,6 @@ ul li.checked {
     color: #22e32c;
 }
 
-.input-error {
-    border: 2px solid red;
-}
 
 .input-ok {
     border: 1px solid black;
