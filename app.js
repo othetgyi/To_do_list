@@ -50,7 +50,7 @@ function populateItem (item, id, done, trash, date){
     
     ul.insertAdjacentHTML("beforeend", `
     <li class="todo">
-    <i class="${PREFIX} ${DONE}" job="complete" id="${id}"></i>&nbsp;&nbsp; <p class="text ${LINE}">${item}&nbsp;${date}</p>&nbsp;&nbsp;
+    <i class="${PREFIX} ${DONE}" job="complete" id="${id}"></i>&nbsp;&nbsp; <p class="text ${LINE}">${item}&nbsp;&nbsp;&nbsp;<i>${date}</i></p>&nbsp;&nbsp;&nbsp;
     <i class="far fa-trash-alt" job="delete" id="${id}"></i>
     </li>
 `);
@@ -75,8 +75,9 @@ function newTodo() {
         dateField.className = "error";
 
     } else { 
-        document.getElementById("dateError").textContent = "";        
-        field.classList.remove("taskError");
+        document.getElementById("textError").textContent = "";   
+        document.getElementById("dateError").textContent = "";      
+        field.classList.remove("error");
         populateItem(item, id, false, false, date);
 
         LIST.push({

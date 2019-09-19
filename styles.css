@@ -57,6 +57,7 @@ ul li.checked {
     border-color: white;
     color: white;
     padding: 3px;
+    border-radius: 5px;
 
 }
 
@@ -87,4 +88,10 @@ ul li.checked {
 .lineThrough {
     color: #D3D3D3;
     text-decoration: line-through;
+}
+
+#clear {
+    background-color: transparent;
+    color: white;
+    border: transparent;
 }
