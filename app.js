@@ -10,21 +10,18 @@ const LINE_THROUGH = "lineThrough";
 const CLEARBUTTON = document.getElementById("clear");
 CLEARBUTTON.addEventListener("click", clearTodo);
 
-
 // Variables
 let LIST = [], id = 0;
-
-
 
 // get item from localstorage
 let data = localStorage.getItem("TODO");
 console.log(data);
+
 // check if data is not empty
 if(data){
     LIST = JSON.parse(data);
     id = LIST.length; // set the id to the last one in the list
     loadList(LIST); // load the list to the user interface
-
 }else{
     //if data isn't empty
     LIST = [];
@@ -55,53 +52,67 @@ function populateItem (item, id, done, trash, date){
     </li>
 `);
 }
-
-//Adds a new todo, b
-function newTodo() {
+//form validation
+function formValidation() {
+    //if the to do field is complete and the date field is entered, call the todo function
     var item = document.getElementById("input").value;
-    var newItem = document.createElement("li");
-    var ul = document.getElementById("list");
-    var field = document.getElementById("input");
     var date = document.getElementById("date").value;
-    var dateField = document.getElementById("date")
-    
     if (item == "") {
         document.getElementById("textError").textContent = "Please enter a task";
         field.className = "error";
+        
+        document.getElementById("date").value = date;
         
     }
     else if (date == "") {
         document.getElementById("dateError").textContent = "Please enter a due date";
         dateField.className = "error";
 
+    } 
+    else newTodo(item, date);
+}
+
+//Adds a new todo, b
+function newTodo(item, date) {
+  
+    var newItem = document.createElement("li");
+    var ul = document.getElementById("list");
+    var field = document.getElementById("input");
+    
+    var dateField = document.getElementById("date")
+    
+    
     } else { 
-        document.getElementById("textError").textContent = "";   
+        
         document.getElementById("dateError").textContent = "";      
         field.classList.remove("error");
         populateItem(item, id, false, false, date);
 
-        LIST.push({
-            name : item,
-            date: date,
-            id : id,
-            done : false,
-            trash : false
-        });
-        
-        
-        //sets calendar default date to today's date
-        document.querySelector("#date").valueAsDate = new Date();
        
-
-        // add item to localstorage (this code must be added where the LIST array is updated)
-        localStorage.setItem("TODO", JSON.stringify(LIST));
-
+        saveInput(item, date);
+        
         id++;
 
         }
+        
         field.value = "";
+        dateField.value = "";
+        
     }
 
+
+//Submission after valid input
+
+function saveInput(item, date){
+LIST.push({
+    name : item,
+    date: date,
+    id : id,
+    done : false,
+    trash : false
+});
+localStorage.setItem("TODO", JSON.stringify(LIST));
+}
 //clear todo
 
 function clearTodo() {
@@ -154,7 +165,7 @@ localStorage.setItem("TODO", JSON.stringify(LIST));
 //});
 
 //Calls function when button is clicked on
-button.addEventListener("click", newTodo);
+button.addEventListener("click", validateInput);
 
 
 
