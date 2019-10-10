@@ -100,11 +100,9 @@ function newTodo(item, date) {
     saveInput(item, date);
     id++;
     document.getElementById("textError").textContent = "";      
-        
-        document.getElementById("dateError").textContent = "";      
-        
-    item.value = "";
-    date.value = "";
+    document.getElementById("dateError").textContent = "";      
+    document.getElementById("input").value = "";
+    document.getElementById("date").value = "";
     }
 
 //clear todo
