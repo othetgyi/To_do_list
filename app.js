@@ -52,9 +52,9 @@ function validateInput() {
         document.getElementById("textError").textContent = "";      
         item.classList.remove("error");
        // document.getElementById("date").value = date;
-    } else if (date == "") {
-        document.getElementById("dateError").textContent = "Please enter a due date";
-        date.className = "error";
+    } else if (date == !"" && item == "") {
+        document.getElementById("textError").textContent = "Please enter a task";
+        item.className = "error";
     } else newTodo(item, date);
 }
 
