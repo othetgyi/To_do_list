@@ -43,6 +43,9 @@ h1, h2 {
     opacity: 0.8;
 }
 
+.date {
+    color: sienna;
+}
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: white;
   }

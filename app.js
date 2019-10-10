@@ -70,7 +70,7 @@ function populateItem (item, id, done, trash, date){
     
     ul.insertAdjacentHTML("beforeend", `
     <li class="todo">
-    <i class="${PREFIX} ${DONE}" job="complete" id="${id}"></i>&nbsp;&nbsp; <p class="text ${LINE}">${item}&nbsp;&nbsp;&nbsp;<i>${date}</i></p>&nbsp;&nbsp;&nbsp;
+    <i class="${PREFIX} ${DONE}" job="complete" id="${id}"></i>&nbsp;&nbsp; <p class="text ${LINE}">${item}&nbsp;&nbsp;&nbsp;<span class="date">${date}</span></p>&nbsp;&nbsp;&nbsp;
     <i class="far fa-trash-alt" job="delete" id="${id}"></i>
     </li>
 `);
@@ -112,7 +112,7 @@ function clearTodo() {
     localStorage.clear();
 }
 
-//Complete to do
+//Mark task as complete or incomplete
 function completeToDo(element) {
     element.classList.toggle(FAR);
     element.classList.toggle(FAS);
@@ -128,7 +128,6 @@ function removeTodo(element){
     element.parentNode.parentNode.removeChild(element.parentNode); 
 
     LIST[element.id].trash = true;
-
 }
 
 // Targets dynamically created items
