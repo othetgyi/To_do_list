@@ -46,9 +46,11 @@ function validateInput() {
         item.className = "error";
         document.getElementById("dateError").textContent = "Please enter a due date";
         date.className = "error";
-    } else if (item == "") {
-        document.getElementById("textError").textContent = "Please enter a task";
-        item.className = "error";
+    } else if (item !== "" && date == "") {
+        document.getElementById("dateError").textContent = "Please enter a due date";
+        date.className = "error";
+        document.getElementById("textError").textContent = "";      
+        item.classList.remove("error");
        // document.getElementById("date").value = date;
     } else if (date == "") {
         document.getElementById("dateError").textContent = "Please enter a due date";
