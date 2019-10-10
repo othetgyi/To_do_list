@@ -1,5 +1,6 @@
 //Select elements
 var button = document.getElementById("button");
+var ul = document.getElementById("list");
 
 // Class names
 const CHECK = "fa-check-circle";
@@ -53,7 +54,7 @@ function populateItem (item, id, done, trash, date){
 }
 
 //form validation
-function formValidation() {
+function validateInput() {
     //if the todo field is complete and the date field is entered, call the todo function
     var item = document.getElementById("input").value;
     var date = document.getElementById("date").value;
@@ -77,7 +78,8 @@ function newTodo(item, date) {
     var field = document.getElementById("input");
     var dateField = document.getElementById("date")
     
-    } else { 
+    if (field.value != "" && dateField.value != ""){
+     else { 
         document.getElementById("dateError").textContent = "";      
         field.classList.remove("error");
         populateItem(item, id, false, false, date);
@@ -86,7 +88,7 @@ function newTodo(item, date) {
         }
         field.value = "";
         dateField.value = "";
-        }
+    }
 
 //Submission after valid input
 function saveInput(item, date){
