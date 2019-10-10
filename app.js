@@ -36,23 +36,6 @@ if(data){
         });
     }
 
-//adds an li to the ul
-function populateItem (item, id, done, trash, date){
-    var ul = document.getElementById("list");
-    if(trash){ return;}
-
-    const PREFIX = done ? FAS : FAR; 
-    const DONE = done ? CHECK : UNCHECK;
-    const LINE = done ? LINE_THROUGH : ""; 
-    
-    ul.insertAdjacentHTML("beforeend", `
-    <li class="todo">
-    <i class="${PREFIX} ${DONE}" job="complete" id="${id}"></i>&nbsp;&nbsp; <p class="text ${LINE}">${item}&nbsp;&nbsp;&nbsp;<i>${date}</i></p>&nbsp;&nbsp;&nbsp;
-    <i class="far fa-trash-alt" job="delete" id="${id}"></i>
-    </li>
-`);
-}
-
 //form validation
 function validateInput() {
     //if the todo field is complete and the date field is entered, call the todo function
@@ -70,23 +53,42 @@ function validateInput() {
     else newTodo(item, date);
 }
 
+//adds an li to the ul
+function populateItem (item, id, done, trash, date){
+    var ul = document.getElementById("list");
+    if(trash){return;}
+
+    const PREFIX = done ? FAS : FAR; 
+    const DONE = done ? CHECK : UNCHECK;
+    const LINE = done ? LINE_THROUGH : ""; 
+    
+    ul.insertAdjacentHTML("beforeend", `
+    <li class="todo">
+    <i class="${PREFIX} ${DONE}" job="complete" id="${id}"></i>&nbsp;&nbsp; <p class="text ${LINE}">${item}&nbsp;&nbsp;&nbsp;<i>${date}</i></p>&nbsp;&nbsp;&nbsp;
+    <i class="far fa-trash-alt" job="delete" id="${id}"></i>
+    </li>
+`);
+}
+
+
+
 //Adds a new todo, b
 function newTodo(item, date) {
   
     var newItem = document.createElement("li");
     var ul = document.getElementById("list");
-    var field = document.getElementById("input");
-    var dateField = document.getElementById("date")
+    var item = document.getElementById("input").value;
+    var dateField = document.getElementById("date");
     
    /* {
      else { */
         document.getElementById("dateError").textContent = "";      
-        field.classList.remove("error");
+        item.classList.remove("error");
         populateItem(item, id, false, false, date);
         saveInput(item, date);
         id++;
         }
-        field.value = "";
+        item.value = "";
         dateField.value = "";
     //}
 
