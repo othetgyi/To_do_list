@@ -78,8 +78,8 @@ function newTodo(item, date) {
     var field = document.getElementById("input");
     var dateField = document.getElementById("date")
     
-    if (field.value != "" && dateField.value != ""){
-     else { 
+   /* {
+     else { */
         document.getElementById("dateError").textContent = "";      
         field.classList.remove("error");
         populateItem(item, id, false, false, date);
@@ -88,7 +88,7 @@ function newTodo(item, date) {
         }
         field.value = "";
         dateField.value = "";
-    }
+    //}
 
 //Submission after valid input
 function saveInput(item, date){
