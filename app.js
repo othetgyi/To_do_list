@@ -58,6 +58,10 @@ function validateInput() {
         document.getElementById("dateError").textContent = "";      
         item.classList.remove("error");
     } else newTodo(item, date);
+        document.getElementById("textError").textContent = "";      
+        item.classList.remove("error");
+        document.getElementById("dateError").textContent = "";      
+        item.classList.remove("error");
 }
 
 //adds an li to the ul
@@ -88,8 +92,8 @@ function newTodo(item, date) {
     populateItem(item, id, false, false, date);
     saveInput(item, date);
     id++;
-    document.getElementById("dateError").textContent = "";      
-    item.classList.remove("error");
+    /*document.getElementById("dateError").textContent = "";      
+    item.classList.remove("error");*/
     item.value = "";
     date.value = "";
     }
