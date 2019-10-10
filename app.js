@@ -35,8 +35,7 @@ if(data){
         });
     }
 
-//helper function to add an html li element to the list
-
+//adds an li to the ul
 function populateItem (item, id, done, trash, date){
     var ul = document.getElementById("list");
     if(trash){ return;}
@@ -52,6 +51,7 @@ function populateItem (item, id, done, trash, date){
     </li>
 `);
 }
+
 //form validation
 function formValidation() {
     //if the to do field is complete and the date field is entered, call the todo function
