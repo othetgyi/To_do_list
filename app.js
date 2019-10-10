@@ -56,12 +56,12 @@ function validateInput() {
         document.getElementById("textError").textContent = "Please enter a task";
         item.className = "error";
         document.getElementById("dateError").textContent = "";      
-        item.classList.remove("error");
+        date.classList.remove("error");
     } else newTodo(item, date);
         document.getElementById("textError").textContent = "";      
         item.classList.remove("error");
         document.getElementById("dateError").textContent = "";      
-        item.classList.remove("error");
+        date.classList.remove("error");
 }
 
 //adds an li to the ul
