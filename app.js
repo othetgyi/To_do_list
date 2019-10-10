@@ -41,7 +41,9 @@ function validateInput() {
     //if the todo field is complete and the date field is entered, call the todo function
     var item = document.getElementById("input").value;
     var date = document.getElementById("date").value;
-    if (item == "" && date == ""){
+
+    if 
+   /* if (item == "" && date == ""){
         document.getElementById("textError").textContent = "Please enter a task";
         item.className = "error";
         document.getElementById("dateError").textContent = "Please enter a due date";
@@ -50,13 +52,13 @@ function validateInput() {
         document.getElementById("dateError").textContent = "Please enter a due date";
         date.className = "error";
         document.getElementById("textError").textContent = "";      
-        /*item.classList.remove("error");*/
+        /*item.classList.remove("error");
        // document.getElementById("date").value = date;
     } else if (item == "" && date !== "") {
         document.getElementById("textError").textContent = "Please enter a task";
         item.className = "error";
         document.getElementById("dateError").textContent = "";      
-        /*date.classList.remove("error");*/
+        /*date.classList.remove("error");
     } else newTodo(item, date);
         /*document.getElementById("textError").textContent = "";      
         item.classList.remove("error");
@@ -92,8 +94,6 @@ function newTodo(item, date) {
     populateItem(item, id, false, false, date);
     saveInput(item, date);
     id++;
-    /*document.getElementById("dateError").textContent = "";      
-    item.classList.remove("error");*/
     item.value = "";
     date.value = "";
     }
