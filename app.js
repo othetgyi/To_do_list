@@ -41,21 +41,19 @@ function validateInput() {
     //if the todo field is complete and the date field is entered, call the todo function
     var item = document.getElementById("input").value;
     var date = document.getElementById("date").value;
-    if (item == "") {
+    if (item == "" && date == ""){
+        document.getElementById("textError").textContent = "Please enter a task";
+        item.className = "error";
+        document.getElementById("dateError").textContent = "Please enter a due date";
+        date.className = "error";
+    } else if (item == "") {
         document.getElementById("textError").textContent = "Please enter a task";
         item.className = "error";
        // document.getElementById("date").value = date;
-    }
-    else if (date == "") {
+    } else if (date == "") {
         document.getElementById("dateError").textContent = "Please enter a due date";
         date.className = "error";
-    } else if (item == "" && date == ""){
-        document.getElementById("textError").textContent = "Please enter a task";
-        item.className = "error";
-        document.getElementById("dateError").textContent = "Please enter a due date";
-        date.className = "error";
-    }
-    else newTodo(item, date);
+    } else newTodo(item, date);
 }
 
 //adds an li to the ul
@@ -81,15 +79,15 @@ function newTodo(item, date) {
     var newItem = document.createElement("li");
     var ul = document.getElementById("list");
     var item = document.getElementById("input").value;
-    var dateField = document.getElementById("date");
+    var date = document.getElementById("date").value;
     
     populateItem(item, id, false, false, date);
     saveInput(item, date);
     id++;
     document.getElementById("dateError").textContent = "";      
     item.classList.remove("error");
-    item.value = "";
-    dateField.value = "";
+    item = "";
+    date = "";
     }
 
 //Submission after valid input
