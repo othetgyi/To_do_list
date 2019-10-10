@@ -42,8 +42,7 @@ function validateInput() {
     var item = document.getElementById("input").value;
     var date = document.getElementById("date").value;
 
-    if 
-   /* if (item == "" && date == ""){
+    if (item == "" && date == ""){
         document.getElementById("textError").textContent = "Please enter a task";
         item.className = "error";
         document.getElementById("dateError").textContent = "Please enter a due date";
@@ -52,18 +51,12 @@ function validateInput() {
         document.getElementById("dateError").textContent = "Please enter a due date";
         date.className = "error";
         document.getElementById("textError").textContent = "";      
-        /*item.classList.remove("error");
-       // document.getElementById("date").value = date;
-    } else if (item == "" && date !== "") {
+       //document.getElementById("date").value = date;
+    }  else if (item == "" && date !== "") {
         document.getElementById("textError").textContent = "Please enter a task";
         item.className = "error";
         document.getElementById("dateError").textContent = "";      
-        /*date.classList.remove("error");
     } else newTodo(item, date);
-        /*document.getElementById("textError").textContent = "";      
-        item.classList.remove("error");
-        document.getElementById("dateError").textContent = "";      
-        date.classList.remove("error");*/
 }
 
 //adds an li to the ul
@@ -83,6 +76,18 @@ function populateItem (item, id, done, trash, date){
 `);
 }
 
+//Submission after valid input
+function saveInput(item, date){
+    LIST.push({
+        name : item,
+        date: date,
+        id : id,
+        done : false,
+        trash : false
+    });
+    localStorage.setItem("TODO", JSON.stringify(LIST));
+    }
+
 //Adds a new todo, b
 function newTodo(item, date) {
   
@@ -94,21 +99,13 @@ function newTodo(item, date) {
     populateItem(item, id, false, false, date);
     saveInput(item, date);
     id++;
+    document.getElementById("textError").textContent = "";      
+        
+        document.getElementById("dateError").textContent = "";      
+        
     item.value = "";
     date.value = "";
     }
-
-//Submission after valid input
-function saveInput(item, date){
-LIST.push({
-    name : item,
-    date: date,
-    id : id,
-    done : false,
-    trash : false
-});
-localStorage.setItem("TODO", JSON.stringify(LIST));
-}
 
 //clear todo
 function clearTodo() {
