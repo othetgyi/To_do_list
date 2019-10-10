@@ -43,17 +43,17 @@ function validateInput() {
     var date = document.getElementById("date").value;
     if (item == "") {
         document.getElementById("textError").textContent = "Please enter a task";
-        field.className = "error";
+        item.className = "error";
        // document.getElementById("date").value = date;
     }
     else if (date == "") {
         document.getElementById("dateError").textContent = "Please enter a due date";
-        dateField.className = "error";
+        date.className = "error";
     } else if (item == "" && date == ""){
         document.getElementById("textError").textContent = "Please enter a task";
-        field.className = "error";
+        item.className = "error";
         document.getElementById("dateError").textContent = "Please enter a due date";
-        dateField.className = "error";
+        date.className = "error";
     }
     else newTodo(item, date);
 }
@@ -153,19 +153,5 @@ document.getElementById("list").addEventListener("click", function(e) {
 // add item to localstorage (this code must be added where the LIST array is updated)
 localStorage.setItem("TODO", JSON.stringify(LIST));
 
-// Clear local storage
-//const clear = document.querySelector(".clear");
-
-//clear.addEventListener('click', function(){
-//    localStorage.clear();
-//    location.reload();
-//});
-
 //Calls function when button is clicked on
 button.addEventListener("click", validateInput);
-
-
-
-
-
-
