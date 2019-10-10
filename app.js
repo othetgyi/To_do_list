@@ -54,20 +54,17 @@ function populateItem (item, id, done, trash, date){
 
 //form validation
 function formValidation() {
-    //if the to do field is complete and the date field is entered, call the todo function
+    //if the todo field is complete and the date field is entered, call the todo function
     var item = document.getElementById("input").value;
     var date = document.getElementById("date").value;
     if (item == "") {
         document.getElementById("textError").textContent = "Please enter a task";
         field.className = "error";
-        
         document.getElementById("date").value = date;
-        
     }
     else if (date == "") {
         document.getElementById("dateError").textContent = "Please enter a due date";
         dateField.className = "error";
-
     } 
     else newTodo(item, date);
 }
@@ -78,31 +75,20 @@ function newTodo(item, date) {
     var newItem = document.createElement("li");
     var ul = document.getElementById("list");
     var field = document.getElementById("input");
-    
     var dateField = document.getElementById("date")
     
-    
     } else { 
-        
         document.getElementById("dateError").textContent = "";      
         field.classList.remove("error");
         populateItem(item, id, false, false, date);
-
-       
         saveInput(item, date);
-        
         id++;
-
         }
-        
         field.value = "";
         dateField.value = "";
-        
-    }
-
+        }
 
 //Submission after valid input
-
 function saveInput(item, date){
 LIST.push({
     name : item,
@@ -113,8 +99,8 @@ LIST.push({
 });
 localStorage.setItem("TODO", JSON.stringify(LIST));
 }
-//clear todo
 
+//clear todo
 function clearTodo() {
     let list = document.getElementById("list")
     list.innerHTML = ''
@@ -129,7 +115,6 @@ function completeToDo(element) {
     element.classList.toggle(UNCHECK);
     
     element.parentNode.querySelector(".text").classList.toggle(LINE_THROUGH);
-
     LIST[element.id].done = LIST[element.id].done ? false : true;
 }
 
