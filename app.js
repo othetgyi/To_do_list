@@ -52,9 +52,11 @@ function validateInput() {
         document.getElementById("textError").textContent = "";      
         item.classList.remove("error");
        // document.getElementById("date").value = date;
-    } else if (date == !"" && item == "") {
+    } else if (item == "" && date !== "") {
         document.getElementById("textError").textContent = "Please enter a task";
         item.className = "error";
+        document.getElementById("dateError").textContent = "";      
+        item.classList.remove("error");
     } else newTodo(item, date);
 }
 
@@ -88,8 +90,8 @@ function newTodo(item, date) {
     id++;
     document.getElementById("dateError").textContent = "";      
     item.classList.remove("error");
-    item = "";
-    date = "";
+    item.value = "";
+    date.value = "";
     }
 
 //Submission after valid input
