@@ -75,8 +75,6 @@ function populateItem (item, id, done, trash, date){
 `);
 }
 
-
-
 //Adds a new todo, b
 function newTodo(item, date) {
   
@@ -85,20 +83,14 @@ function newTodo(item, date) {
     var item = document.getElementById("input").value;
     var dateField = document.getElementById("date");
     
-   /* {
-     else { */
-        populateItem(item, id, false, false, date);
-        saveInput(item, date);
-        id++;
-        document.getElementById("dateError").textContent = "";      
-        item.classList.remove("error");
-        
-        
-        
-       // }
-        item.value = "";
-        dateField.value = "";
-    //}
+    populateItem(item, id, false, false, date);
+    saveInput(item, date);
+    id++;
+    document.getElementById("dateError").textContent = "";      
+    item.classList.remove("error");
+    item.value = "";
+    dateField.value = "";
+    }
 
 //Submission after valid input
 function saveInput(item, date){
