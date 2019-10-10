@@ -50,18 +50,18 @@ function validateInput() {
         document.getElementById("dateError").textContent = "Please enter a due date";
         date.className = "error";
         document.getElementById("textError").textContent = "";      
-        item.classList.remove("error");
+        /*item.classList.remove("error");*/
        // document.getElementById("date").value = date;
     } else if (item == "" && date !== "") {
         document.getElementById("textError").textContent = "Please enter a task";
         item.className = "error";
         document.getElementById("dateError").textContent = "";      
-        date.classList.remove("error");
+        /*date.classList.remove("error");*/
     } else newTodo(item, date);
-        document.getElementById("textError").textContent = "";      
+        /*document.getElementById("textError").textContent = "";      
         item.classList.remove("error");
         document.getElementById("dateError").textContent = "";      
-        date.classList.remove("error");
+        date.classList.remove("error");*/
 }
 
 //adds an li to the ul
