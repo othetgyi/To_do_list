@@ -46,6 +46,7 @@ h1, h2 {
 .date {
     color: sienna;
 }
+
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: white;
   }
@@ -118,7 +119,13 @@ input:-webkit-autofill:active {
     }
 }
 
-::-webkit-datetime-edit-month-field { background: none; }
+::-webkit-datetime-edit-month-field  { background: transparent; }
+::-webkit-datetime-edit-month-field: hover,
+::-webkit-datetime-edit-month-field: focus,
+::-webkit-datetime-edit-month-field: active { color: red; /*background: none;*/ }
+
+/*
+ */
 ::-webkit-datetime-edit-day-field { background: none; }
 ::-webkit-datetime-edit-year-field { background: none; }
 
@@ -132,19 +139,9 @@ input:-webkit-autofill:active {
 
 ::-webkit-calendar-picker-indicator {
     background: transparent;
+    opacity: 1;
 }
-/*::-webkit-calendar-picker-indicator {
-  opacity: 0;
-  height: 14px;
-  width: 80px;
-  
- 
-  z-index: 2;
-  position: absolute;
-  left: 9px;
-  top: 8px;
-}
-*/
+
 #list li {
     list-style-type: none;
 }
