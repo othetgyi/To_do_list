@@ -43,17 +43,17 @@ function validateInput() {
     var date = document.getElementById("date").value;
 
     if (item == "" && date == ""){
-        document.getElementById("textError").textContent = "Please enter a task";
+        document.getElementById("textError").textContent = "Enter a task";
         item.className = "error";
-        document.getElementById("dateError").textContent = "Please enter a due date";
+        document.getElementById("dateError").textContent = "Enter a due date";
         date.className = "error";
     } else if (item !== "" && date == "") {
-        document.getElementById("dateError").textContent = "Please enter a due date";
+        document.getElementById("dateError").textContent = "Enter a due date";
         date.className = "error";
         document.getElementById("textError").textContent = "";      
        //document.getElementById("date").value = date;
     }  else if (item == "" && date !== "") {
-        document.getElementById("textError").textContent = "Please enter a task";
+        document.getElementById("textError").textContent = "Enter a task";
         item.className = "error";
         document.getElementById("dateError").textContent = "";      
     } else newTodo(item, date);

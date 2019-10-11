@@ -1,3 +1,6 @@
+* {
+    margin: 0;
+}
 
 html {
     height: 100%;
@@ -157,13 +160,23 @@ input:-webkit-autofill:active {
 #textError, #dateError {
     color: red;
     font-weight: bold;
+   
 }
+
+.error {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5.5em 0 0;
+}
+
 
 .fa-check-circle {
     color: #22e32c;
 }
 
-
+li {
+    margin: .75em 0;
+}
 .input-ok {
     border: 1px solid black;
 }
