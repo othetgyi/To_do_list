@@ -96,10 +96,6 @@ input[type="date"] {
     outline: none;
 }
 
-input[type="date"]:invalid {
-    color: purple;
-}
-
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -122,21 +118,11 @@ input:-webkit-autofill:active {
     }
 }
 
-::-webkit-datetime-edit-day-field/*,
-::-webkit-datetime-edit-day-field: hover,
-::-webkit-datetime-edit-day-field: focus*/ { 
+/*::-webkit-datetime-edit-day-field,
+::-webkit-datetime-edit-month-field,
+::-webkit-datetime-edit-year-field  { 
     background: transparent; 
-}
-
-
-/*::-webkit-datetime-edit-month-field  { background: transparent; } 
-::-webkit-datetime-edit-month-field: hover,
-::-webkit-datetime-edit-month-field: focus,
-::-webkit-datetime-edit-month-field: active { color: yellow; background: none; }
-
-
-
-::-webkit-datetime-edit-year-field { background: none; }*/
+}*/
 
 ::-webkit-inner-spin-button,
 ::-webkit-clear-button {
