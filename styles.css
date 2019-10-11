@@ -96,6 +96,10 @@ input[type="date"] {
     outline: none;
 }
 
+input[type="date"]:invalid {
+    color: purple;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -118,9 +122,10 @@ input:-webkit-autofill:active {
     }
 }
 
+::-webkit-datetime-edit-day-field/*,
 ::-webkit-datetime-edit-day-field: hover,
-::-webkit-datetime-edit-day-field: focus { 
-    background: yellow; 
+::-webkit-datetime-edit-day-field: focus*/ { 
+    background: transparent; 
 }
 
 
