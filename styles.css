@@ -61,11 +61,11 @@ h1, h2 {
   }
 
 .todo {
-    
     position: relative;
     display: flex;
     align-items: center;
 }
+
 ul li.checked {
     background: #282828;
     color: white;
@@ -78,7 +78,6 @@ ul li.checked {
     color: white;
     padding: 3px;
     border-radius: 5px;
-
 }
 
 input[type="text"] {
@@ -93,7 +92,7 @@ input[type="date"] {
     border: none;
     border-bottom: 2px solid white;
     background-color: transparent;
-    color: white;
+    color: red;
     outline: none;
 }
 
@@ -119,19 +118,19 @@ input:-webkit-autofill:active {
     }
 }
 
-::-webkit-datetime-edit-month-field  { background: transparent; }
+::-webkit-datetime-edit-month-field  { background: transparent; } 
 ::-webkit-datetime-edit-month-field: hover,
 ::-webkit-datetime-edit-month-field: focus,
-::-webkit-datetime-edit-month-field: active { color: red; /*background: none;*/ }
+::-webkit-datetime-edit-month-field: active { color: yellow; background: none; }
 
-/*
- */
+
 ::-webkit-datetime-edit-day-field { background: none; }
 ::-webkit-datetime-edit-year-field { background: none; }
 
 ::-webkit-inner-spin-button {
   display: none;
 }
+
 ::-webkit-clear-button {
   display: none;
   -webkit-appearance: none;
